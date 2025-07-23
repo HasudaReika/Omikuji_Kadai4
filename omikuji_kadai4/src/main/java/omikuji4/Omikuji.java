@@ -14,6 +14,22 @@ public class Omikuji implements Fortune, Serializable {
 		return omikujiCode;
 	}
 
+	public String getFortuneName() {
+		return fortuneName;
+	}
+
+	public String getNegaigoto() {
+		return negaigoto;
+	}
+
+	public String getAkinai() {
+		return akinai;
+	}
+
+	public String getGakumon() {
+		return gakumon;
+	}
+
 	protected String fortuneName;
 	protected String negaigoto;
 	protected String akinai;

@@ -1,8 +1,8 @@
+<%@page import="omikuji4.Omikuji"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
-String birthday = (String) request.getAttribute("birthday");
-
+Omikuji omikuji = (Omikuji) request.getAttribute("omikuji");
 
 %>
 <!DOCTYPE html>
@@ -12,7 +12,14 @@ String birthday = (String) request.getAttribute("birthday");
 <title>おみくじ結果</title>
 </head>
 <body>
-<!-- 値が取得できているかテスト -->
-	<p>誕生日： <%=birthday %></p>
+	<p><%=omikuji.disp()%></p><br>
+	<!-- <button onclick="confirmAction()">おみくじを続けますか？</button>
+	
+	<script>
+		function confirmAction(){
+			/* はいいいえボタン */
+			}
+	</script> -->
+	
 </body>
 </html>
