@@ -1,0 +1,12 @@
+h1{
+	font-size: larger;
+}
+.container {
+	background-color: aliceblue;
+	display: inline-block;
+	padding: 15px;
+}
+.error-msg {
+	color: red;
+	font-size:smaller;
+}
