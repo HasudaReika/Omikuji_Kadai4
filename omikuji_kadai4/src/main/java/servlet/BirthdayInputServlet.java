@@ -69,7 +69,7 @@ public class BirthdayInputServlet extends HttpServlet {
 		out.println("<form action=\"result\" method=\"post\">");
 
 		if (errorMsg != null) { //エラーメッセージがある場合は表示
-			out.println("<p class=\"error-msg\">" + errorMsg + "</p>");
+			out.println("<p class=\"error\">" + errorMsg + "</p>");
 		}
 
 		out.println("<p>誕生日を入力してください 例:20011009<br>");
