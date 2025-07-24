@@ -78,6 +78,19 @@ public class OmikujiProcessServlet extends HttpServlet {
 		
 		//誕生日文字列を半角に変換
 		String birthdayString = Normalizer.normalize(birthday, Form.NFKC);
+		if (birthdayString.length() != 8) {
+			//存在しない日付の場合、エラーメッセージを出力
+			errorMsg = "正しい日付を入力してください";
+			//リクエストスコープに値をセット
+			request.setAttribute("errorMsg", errorMsg);
+			//コンソールに出力用
+			System.out.println(errorMsg);
+			//エラーメッセージとともにフォーム表示用サーブレットに戻る
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/omikuji");
+			dispatcher.forward(request, response);
+			return;
+		}
+		
 		LocalDate bdDate = LocalDate.parse(birthdayString, formatter);
 
 		//resultテーブルから取得するおみくじ変数
