@@ -52,7 +52,7 @@ public class Omikuji implements Fortune, Serializable {
 		builder.append("願い事：").append(this.negaigoto).append("\n");
 		builder.append("商い：").append(this.akinai).append("\n");
 		builder.append("学問：").append(this.gakumon);
-		return builder.toString();
+		return builder.toString().replace("\n", "<br>");
 	}
 
 }
