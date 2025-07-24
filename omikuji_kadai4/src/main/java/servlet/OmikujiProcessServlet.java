@@ -27,14 +27,6 @@ public class OmikujiProcessServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public OmikujiProcessServlet() {
-		super();
-		
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -75,7 +67,7 @@ public class OmikujiProcessServlet extends HttpServlet {
 		LocalDate today = LocalDate.now();
 		//birthdayをLocalDate型に変換
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-		
+
 		//誕生日文字列を半角に変換
 		String birthdayString = Normalizer.normalize(birthday, Form.NFKC);
 		if (birthdayString.length() != 8) {
@@ -90,7 +82,7 @@ public class OmikujiProcessServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			return;
 		}
-		
+
 		LocalDate bdDate = LocalDate.parse(birthdayString, formatter);
 
 		//resultテーブルから取得するおみくじ変数

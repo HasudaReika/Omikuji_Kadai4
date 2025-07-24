@@ -22,8 +22,7 @@ public class BirthdayInputServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public BirthdayInputServlet() {
-		super();
+	public void init() throws ServletException {
 		OmikujiDB omikujiDB = new OmikujiDB();
 		//DBにおみくじが格納されているかチェック
 		try {
